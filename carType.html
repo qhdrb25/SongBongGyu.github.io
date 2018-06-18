@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BONGGYU CAR</title>
+    <meta charset="UTF-8">
+    <meta name="description" content img-wrapper="">
+    <meta name="keywords" content img-wrapper="">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/carType.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+                var val = location.href.substr(
+                location.href.lastIndexOf('=') + 1
+            );
+
+            if (val == "korea") {
+                for (i = 1; i < 9; i++) {
+                    var temp = document.getElementById('foreign' + i);
+                    temp.style.display = "none";
+                }
+                document.getElementById("infoComment").innerHTML = "국산차";
+
+            } else {
+                for (i = 1; i < 9; i++) {
+                    var temp = document.getElementById('korea' + i);
+                    temp.style.display = "none";
+                }
+                document.getElementById("infoComment").innerHTML = "외제차";
+            }
+
+        });
+
+        function PageMove(value) {
+            if (value == "korea" || value == "foreign") {
+                window.location.href = "carType.html?value=" + value;
+            } else {
+                window.location.href = "carInfo.html?value=" + value;
+            }
+        }
+
+        function Play(urlSource) {
+            document.getElementById('vedioBox').src = urlSource;
+
+            var scmove = $('#vedioBox').offset().top;
+            $('html, body').animate({
+                scrollTop: scmove
+            }, 400);
+        }
+    </script>
+</head>
+
+<body>
+    <a id="top" href="#">▲</a>
+    <!--    메뉴-->
+    <div class="menubar">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#" id="current">국산/수입</a>
+                <ul>
+                    <li onclick="PageMove('korea')"><a>국산</a></li>
+                    <li onclick="PageMove('foreign')"><a>수입</a></li>
+                </ul>
+            </li>
+            <li onclick="PageMove('carInfo')">
+                <a href="#" id="current"> 차종별 차량 소개</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section1">
+        <h1 id="infoComment"></h1>
+        <h3> 차량 클릭 시, 영상이 재생됩니다. </h3>
+<!--        국산-->
+        <div id="korea1" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/xHGIanHTPHw')"><img src="img/equus.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">EQUUS VS380</span><br><a>￦67,830,000부터 EQUUS VS380</a></div>
+
+        </div>
+        <div id="korea2" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/8QCV4YC_CQM')"><img src="img/eq900.png">
+
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">Genesis EQ900</span><br><a>￦75,000,000부터 Genesis EQ900</a></div>
+
+        </div>
+        <div id="korea3" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/x22hxiRp0m8 ')"><img src="img/chairman.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">Chairman W Kaiser</span><br><a>￦56,340,000부터 Chairman W Kaiser</a></div>
+
+        </div>
+        <div id="korea4" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/uhjI-2Ni3gk')"><img src="img/k9.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">K9</span><br><a>￦54,900,000부터 K9</a></div>
+
+        </div>
+        <div id="korea5" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/4UDMKqxz0NA')"><img src="img/k5.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">K5</span><br><a>￦17,550,000부터 K5</a></div>
+
+        </div>
+        <div id="korea6" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/3dtL2O1Kl7A')"><img src="img/st.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">Stinger</span><br><a>￦35,700,000부터 Stinger</a></div>
+
+        </div>
+        <div id="korea7" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/ZMiH-VmUsVo')"><img src="img/cav.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">The NEW CaniVal</span><br><a>￦28,800,000부터The NEW CaniVal</a></div>
+
+        </div>
+        <div id="korea8" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/8TriJfXIjuw')"><img src="img/gr.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">GRANDEUR</span><br><a>￦26,250,000부터 GRANDEUR</a></div>
+
+        </div>
+<!--    외제-->
+        <div id="foreign1" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/S49VnWQlfZQ')"><img src="img/content1.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">NEW RANGE ROVER</span><br><a>￦172,400,000부터~ 궁극의 Range Rover</a></div>
+
+        </div>
+        <div id="foreign2" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/8QCV4YC_CQM')"><img src="img/slk.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">Mercedes-Benz SLK200</span><br><a>￦69,600,000부터~ Mercedes-Benz SLK200</a></div>
+
+        </div>
+        <div id="foreign3" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/wSpSmQ0Cz84')"><img src="img/eclass.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">Mercedes-Benz Eclass</span><br><a>￦62,200,000부터~ Mercedes-Benz Eclass</a></div>
+
+        </div>
+        <div id="foreign4" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/wteESwg_vhA')"><img src="img/r8.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">Audi R8 </span><br><a>￦249,000,000부터~ Audi R8 </a></div>
+
+        </div>
+        <div id="foreign5" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/Zy-sKyMoU3Q')"><img src="img/x5.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">BMW X5</span><br><a>￦100,600,000부터~ BMW X5</a></div>
+
+        </div>
+        <div id="foreign6" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/msUwRBYrTNw')"><img src="img/fd.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">FORD EXPLORER </span><br><a>￦55,400,000부터 FORD EXPLORER </a></div>
+
+        </div>
+        <div id="foreign7" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/bZ9kiOvzlUo')"><img src="img/ps.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">Porsche 카이엔</span><br><a>￦100,100,000부터 Porsche 카이엔</a></div>
+
+        </div>
+        <div id="foreign8" class="content img-wrapper" onclick="Play('https://www.youtube.com/embed/NYAZ3rALs7U')"><img src="img/ms.png">
+            <div class="darkness"></div>
+            <div class="btn-plus"><span draggable="false">▶</span></div>
+            <div class="title"><span class="car_Name">MASERATI Quattroporte</span><br><a>￦153,800,000부터 MASERATI Quattroporte </a></div>
+        </div>
+    </div>
+
+    <h1 style=" text-align: center;">동영상</h1>
+    <p align="middle">
+        <iframe id="vedioBox" width="854" height="480" frameborder="0" src="https://www.youtube.com/embed/xHGIanHTPHw" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </p>
+
+    <footer> 2018 Copyright © BONNGYU CAR Limited </footer>
+
+</body>
+
+</html>

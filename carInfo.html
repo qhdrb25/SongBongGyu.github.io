@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BONGGYU CAR</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/carInfo.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            document.getElementsByTagName('h2')[0].innerHTML = document.getElementById('t1').innerHTML;
+            $('ul.tabs li').click(function() {
+                var tab_id = $(this).attr('data-tab');
+
+                $('ul.tabs li').removeClass('current');
+                $('.tab-content').removeClass('current');
+
+                $(this).addClass('current');
+                $("#" + tab_id).addClass('current');
+            })
+
+           
+            var val = location.href.substr(
+                location.href.lastIndexOf('=') + 1
+            );
+
+            $('ul.tabs li').click(function() {
+                var tab_id = $(this).attr('data-tab');
+
+                $('ul.tabs li').removeClass('current');
+                $('.tab-content').removeClass('current');
+
+                $(this).addClass('current');
+                $("#" + tab_id).addClass('current');
+            })
+        });
+
+
+        function PageMove(value) {
+            if (value == "korea" || value == "foreign") {
+                window.location.href = "carType.html?value=" + value;
+            } else if(value == "carInfo") {
+                window.location.href = "carInfo.html?value=" + value;
+            }
+        }
+        function CarView(id)
+        {
+            document.getElementsByTagName('h2')[0].innerHTML = "";
+            var name = id.innerHTML;
+            document.getElementsByTagName('h2')[0].innerHTML += name;
+            var img1 = name + '1';
+            var img2 = name + '2';
+            var img3 = name + '3';
+            document.getElementsByTagName('img')[0].src = '../qhdrb25/img/' + img1 +'.png';
+            document.getElementsByTagName('img')[1].src = '../qhdrb25/img/' + img2 +'.png';
+            document.getElementsByTagName('img')[2].src = '../qhdrb25/img/' + img3 +'.png';
+        }
+        function titleChange(value)
+        {
+            document.getElementsByTagName('h1')[0].innerHTML = value;
+            
+            if(value == "쿠페")
+            {   
+                 document.getElementsByTagName('h2')[0].innerHTML = document.getElementById('t1').innerHTML;
+                document.getElementsByTagName('img')[0].src = '../qhdrb25/img/마세라티 그란투리스모1.png';
+                document.getElementsByTagName('img')[1].src = '../qhdrb25/img/마세라티 그란투리스모2.png';
+                document.getElementsByTagName('img')[2].src = '../qhdrb25/img/마세라티 그란투리스모3.png';
+            }
+            else if(value == "SUV")
+            {
+                 document.getElementsByTagName('h2')[0].innerHTML = document.getElementById('t2').innerHTML;
+                document.getElementsByTagName('img')[0].src = '../qhdrb25/img/쏘렌토1.png';
+                document.getElementsByTagName('img')[1].src = '../qhdrb25/img/쏘렌토2.png';
+                document.getElementsByTagName('img')[2].src = '../qhdrb25/img/쏘렌토3.png';
+            }else if(value == "스포츠카"){
+                 document.getElementsByTagName('h2')[0].innerHTML = document.getElementById('t3').innerHTML;
+                 document.getElementsByTagName('img')[0].src = '../qhdrb25/img/BMW i81.png';
+                document.getElementsByTagName('img')[1].src = '../qhdrb25/img/BMW i82.png';
+                document.getElementsByTagName('img')[2].src = '../qhdrb25/img/BMW i83.png';
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+   <!--    메뉴-->
+    <div class="menubar">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#" id="current">국산/수입</a>
+                <ul>
+                    <li onclick="PageMove('korea')"><a>국산</a></li>
+                    <li onclick="PageMove('foreign')"><a>수입</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" id="current" onclick="PageMove('carInfo')"> 차종별 차량 소개</a>
+            </li>
+        </ul>
+    </div>
+
+   
+    <div class="top-menu">
+
+        <div class="container">
+
+            <ul class="tabs">
+                <li class="tab-link current" data-tab="tab-1" onclick="titleChange('쿠페')">쿠페</li>
+                <li class="tab-link" data-tab="tab-2" onclick="titleChange('SUV')">SUV</li>
+                <li class="tab-link" data-tab="tab-3" onclick="titleChange('스포츠카')">스포츠카</li>
+            </ul>
+
+            <div id="tab-1" class="tab-content current" >
+                <div><a id="t1" onclick="CarView(this)">마세라티 그란투리스모</a></div>
+                <div><a onclick="CarView(this)">로터스 엘리스</a></div>
+                <div><a onclick="CarView(this)">로터스 엑시지 스포츠</a></div>
+            </div>
+            <div id="tab-2" class="tab-content">
+                <div><a id="t2" onclick="CarView(this)">쏘렌토</a></div>
+            </div>
+            <div id="tab-3" class="tab-content">
+                <div><a id="t3" onclick="CarView(this)">BMW i8</a></div>
+            </div>
+
+        </div>
+    </div>
+    <h1>쿠페</h1>
+    <h2></h2>
+    <!--   차량 소개 -->
+    <div class="section2">
+        <div class="ImageBox">
+            <img class="carImage" src="img/cp.png" style="width:100%">
+            <img class="carImage" src="img/cp2.png" style="width:100%">
+            <img class="carImage" src="img/cp3.png" style="width:100%">
+            <img src="img/pre.png" class="Pre_Btn" onclick="MovePage(-1)">
+            <img src="img/next.png" class="Next_Btn" onclick="MovePage(1)">
+        </div>
+    </div>
+
+    <footer> 2018 Copyright © BONNGYU CAR Limited </footer>
+</body>
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function MovePage(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("carImage");
+        if (n > x.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = x.length
+        };
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+
+
+</script>
+
+</html>
