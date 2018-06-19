@@ -55,9 +55,10 @@
             var img1 = name + '1';
             var img2 = name + '2';
             var img3 = name + '3';
-            document.getElementsByTagName('img')[0].src = '../qhdrb25/img/' + img1 +'.png';
-            document.getElementsByTagName('img')[1].src = '../qhdrb25/img/' + img2 +'.png';
-            document.getElementsByTagName('img')[2].src = '../qhdrb25/img/' + img3 +'.png';
+            document.getElementsByTagName('img')[0].src = 'https://qhdrb25.github.io/SongBongGyu.github.io/img/' + img1+ '.png';
+            document.getElementsByTagName('img')[1].src = 'https://qhdrb25.github.io/SongBongGyu.github.io/img/' + img2+ '.png';
+            document.getElementsByTagName('img')[2].src = 'https://qhdrb25.github.io/SongBongGyu.github.io/img/' + img3+ '.png';
+   
         }
         function titleChange(value)
         {
@@ -83,6 +84,10 @@
                 document.getElementsByTagName('img')[2].src = '../qhdrb25/img/BMW i83.png';
             }
         }
+        function dd(){
+             var path = window.location.pathname;
+            alert(path);
+        }
     </script>
 </head>
 
@@ -91,7 +96,7 @@
    <!--    메뉴-->
     <div class="menubar">
         <ul>
-            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html" onclick="dd()">HOME</a></li>
             <li><a href="#" id="current">국산/수입</a>
                 <ul>
                     <li onclick="PageMove('korea')"><a>국산</a></li>
